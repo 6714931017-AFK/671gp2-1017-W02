@@ -1,29 +1,36 @@
-# 1. นิยามคลาส (Class Definition)
+# 1. นิยามคลาสสำหรับเก็บข้อมูลสถานที่ท่องเที่ยว
 class TouristAttraction:
-    # ฟังก์ชันคอนสตรัคเตอร์ (__init__) สำหรับกำหนดคุณลักษณะ (Attributes) ของวัตถุ
-    def __init__(self, name, location, attraction_type, highlight):
+    # ฟังก์ชันเริ่มต้นสำหรับกำหนดค่าคุณสมบัติ (Attributes)
+    def __init__(self, name, location, attraction_type, rating):
         self.name = name                 # ชื่อสถานที่
-        self.location = location         # ที่ตั้ง/จังหวัด
-        self.attraction_type = attraction_type # ประเภท (เช่น ทะเล, วัด, ภูเขา)
-        self.highlight = highlight       # จุดเด่นสำคัญ
+        self.location = location         # ที่ตั้ง/จังหวัด/ประเทศ
+        self.attraction_type = attraction_type   # ประเภท (เช่น ทะเล, วัด, ภูเขา)
+        self.rating = rating             # คะแนนรีวิว (เต็ม 5)
 
-    # เมธอด (Method) สำหรับแสดงข้อมูลของสถานที่ท่องเที่ยว
+    # ฟังก์ชันพิเศษแสดงผลข้อมูลวัตถุเมื่อสั่ง print()
+    def __str__(self):
+        return f"{self.name} ({self.location})"
+
+    # เมธอด (Method) แสดงรายละเอียดแบบเต็ม
     def display_info(self):
         print(f"--- ข้อมูลสถานที่ท่องเที่ยว ---")
         print(f"ชื่อสถานที่: {self.name}")
         print(f"ที่ตั้ง: {self.location}")
         print(f"ประเภท: {self.attraction_type}")
-        print(f"จุดเด่น: {self.highlight}")
-        print("-" * 30)
+        print(f"คะแนนรีวิว: {self.rating} / 5 ดาว")
 
-# 2. การสร้างวัตถุ (Object Creation) จากคลาส
-# สร้างวัตถุชื่อ 'attraction1' และส่งค่าข้อมูลเข้าไป
-attraction1 = TouristAttraction(
-    name="วัดพระแก้ว (วัดพระศรีรัตนศาสดาราม)",
-    location="กรุงเทพมหานคร",
-    attraction_type="โบราณสถาน / วัดคู่บ้านคู่เมือง",
-    highlight="ประดิษฐานพระพุทธมหามณีรัตนปฏิมากร และสถาปัตยกรรมไทยอันวิจิตรบรรจง"
+
+# 2. สร้างวัตถุ (Object) จากคลาสจำนวน 1 วัตถุ
+my_trip = TouristAttraction(
+    name="วัดพระแก้ว (วัดพระศรีรัตนศาสดาราม)", 
+    location="กรุงเทพมหานคร, ประเทศไทย", 
+    attraction_type="วัดและโบราณสถาน", 
+    rating=4.9
 )
 
-# 3. การเรียกใช้งานเมธอดเพื่อแสดงผล
-attraction1.display_info()
+# 3. ทดสอบเรียกใช้งานวัตถุ
+# ทดสอบพิมพ์วัตถุตรงๆ (จะเรียกใช้ __str__)
+print(my_trip) 
+
+# เรียกใช้เมธอดเพื่อแสดงรายละเอียดทั้งหมด
+my_trip.display_info()
