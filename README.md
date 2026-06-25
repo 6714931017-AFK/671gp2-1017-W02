@@ -28,5 +28,7 @@ my_trip = TouristAttraction(
     rating=4.9
 )
 # 3. ทดสอบเรียกใช้งานวัตถุ
+
+```python
 print(my_trip) 
 my_trip.display_info()
