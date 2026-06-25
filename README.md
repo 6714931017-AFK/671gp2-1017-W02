@@ -18,14 +18,15 @@ class TouristAttraction:
         print(f"คะแนนรีวิว: {self.rating} / 5 ดาว")
 
 
-# 2. สร้างวัตถุ (Object) จากคลาสจำนวน 1 วัตถุ
+## 2. สร้างวัตถุ (Object) จากคลาสจำนวน 1 วัตถุ
+
+```python
 my_trip = TouristAttraction(
     name="วัดพระแก้ว (วัดพระศรีรัตนศาสดาราม)", 
     location="กรุงเทพมหานคร, ประเทศไทย", 
     attraction_type="วัดและโบราณสถาน", 
     rating=4.9
 )
-
 # 3. ทดสอบเรียกใช้งานวัตถุ
 print(my_trip) 
 my_trip.display_info()
