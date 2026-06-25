@@ -19,7 +19,7 @@ class TouristAttraction:
 
 
 # 2. สร้างวัตถุ (Object) จากคลาสจำนวน 1 วัตถุ
-my_trip = TouristAttraction(
+**my_trip = TouristAttraction(**
     name="วัดพระแก้ว (วัดพระศรีรัตนศาสดาราม)", 
     location="กรุงเทพมหานคร, ประเทศไทย", 
     attraction_type="วัดและโบราณสถาน", 
